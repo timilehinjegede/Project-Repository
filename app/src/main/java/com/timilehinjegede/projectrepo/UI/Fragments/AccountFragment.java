@@ -4,8 +4,6 @@ package com.timilehinjegede.projectrepo.UI.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,69 +11,68 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.timilehinjegede.projectrepo.Adapters.ProjectAdapter;
 import com.timilehinjegede.projectrepo.Model.Project;
 import com.timilehinjegede.projectrepo.R;
 
 import java.util.ArrayList;
-import java.util.List;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
-
-    View view;
-    RecyclerView projectRecyclerView;
+    RecyclerView myProjectsRecyclerView;
     ProjectAdapter projectAdapter;
-    ArrayList<Project> projectList;
+    ArrayList<Project> projects;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
 
-        projectList = new ArrayList<>();
+        myProjectsRecyclerView = view.findViewById(R.id.myProjectsRecyclerView);
 
-        projectRecyclerView = view.findViewById(R.id.projectRecyclerView);
+        projects = new ArrayList<>();
+
 
         //Dummy Data
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
-        projectList.add(
-                new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
-
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
-        projectList.add(
+        projects.add(
+                new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
+
+        projects.add(
                 new Project("This is a project to detect fake number plates in Nigeria","This is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria,This is a project to detect fake number plates in NigeriaThis is a project to detect fake number plates in Nigeria","","","Technology",""));
 
 
-        projectAdapter = new ProjectAdapter(projectList,getContext());
-        projectRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-        projectRecyclerView.setAdapter(projectAdapter);
+
+
+        projectAdapter = new ProjectAdapter(projects,getContext());
+
+        myProjectsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+        myProjectsRecyclerView.setAdapter(projectAdapter);
 
         return view;
     }

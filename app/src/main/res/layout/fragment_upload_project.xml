@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="Timilehin Jegede"
                     android:textStyle="bold"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:layout_marginBottom="5dp"
                     />
@@ -50,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:text="jegedetimilehin2001@gmail.com"
                     android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/white"
                     />
 
             </LinearLayout>
@@ -97,6 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Project Title"
+                        android:inputType="text"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -113,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Project Description"
+                        android:inputType="textMultiLine"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -146,31 +150,80 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
+                    android:visibility="gone"
+                    android:id="@+id/gitHublinkLayout"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Github Link, if any"
+                        android:id="@+id/gitHubLinkEditText"
+                        android:visibility="gone"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <Spinner
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/levelSpinner"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    />
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Level"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/levelSpinner"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Category"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:id="@+id/categorySpinner"
+                            />
 
 
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/categorySpinner"
-                    />
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -178,15 +231,37 @@
                     android:orientation="horizontal"
                     >
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Supervisor Name"
+                            android:layout_weight="1"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="MyDocument.pdf"
-                        android:layout_weight="1"
+                        android:id="@+id/chooseFile"
+                        android:clickable="true"
+                        android:layout_weight="2"
                         android:drawableRight="@drawable/icon_attackfile"
                         />
 
                 </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -194,11 +269,13 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="8dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:fabSize="normal"
+        android:src="@drawable/icon_uploadproject"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

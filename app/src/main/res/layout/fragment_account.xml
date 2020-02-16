@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Model.AccountFragment">
+    tools:context=".UI.Fragments.AccountFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -41,6 +41,7 @@
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:layout_marginBottom="5dp"
+                    android:textColor="@android:color/white"
                     />
 
 
@@ -49,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:text="jegedetimilehin2001@gmail.com"
                     android:layout_marginBottom="10dp"
+                    android:textColor="@android:color/white"
                     />
 
             </LinearLayout>
@@ -87,8 +89,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 tools:listitem="@layout/project_item"
+                android:id="@+id/myProjectsRecyclerView"
                 />
 
         </LinearLayout>

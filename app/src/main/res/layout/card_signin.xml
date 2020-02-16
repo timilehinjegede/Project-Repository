@@ -4,8 +4,9 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     card_view:cardCornerRadius="10dp"
-    card_view:cardElevation="10dp"
+    card_view:cardElevation="15dp"
     android:background="#FFFFFF"
+    android:layout_margin="20dp"
     >
 
     <LinearLayout
@@ -68,6 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SignUp"
+            android:id="@+id/singInButton"
+            android:padding="10dp"
             android:background="@drawable/gradient_bk_round"
             android:textColor="@android:color/white"
             />
@@ -75,9 +78,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account? SignIn"
             android:layout_gravity="end"
             android:gravity="center"
+            android:id="@+id/registerTextView"
             android:layout_marginTop="5dp"
             />
 

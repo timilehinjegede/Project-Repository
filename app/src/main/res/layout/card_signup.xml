@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="10dp"
-    card_view:cardElevation="10dp"
+    card_view:cardElevation="15dp"
     android:background="#FFFFFF"
+    android:layout_margin="20dp"
     >
 
     <androidx.core.widget.NestedScrollView
@@ -60,6 +61,7 @@
                 android:background="@drawable/gradient_bk"
                 android:textColor="@android:color/white"
                 android:layout_marginRight="20dp"
+                android:id="@+id/takePictureButton"
                 android:layout_marginLeft="20dp"
             />
 
@@ -181,14 +183,15 @@
             android:text="SignUp"
             android:background="@drawable/gradient_bk_round"
             android:textColor="@android:color/white"
+            android:id="@+id/signUpButton"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account? SignIn"
             android:layout_gravity="end"
             android:gravity="center"
+            android:id="@+id/logInTextView"
             android:layout_marginTop="5dp"
             />
 

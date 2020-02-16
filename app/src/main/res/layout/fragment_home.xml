@@ -12,13 +12,4 @@
         tools:listitem="@layout/project_item"
         />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Add Project"
-        android:elevation="8dp"
-        android:layout_gravity="bottom|end"
-        />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
